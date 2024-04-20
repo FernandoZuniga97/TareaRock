@@ -20,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.blueGrey,
         title: Text(widget.title),
       ),
       body: StreamBuilder<QuerySnapshot>(
@@ -62,9 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           Navigator.pushNamed(context, '/new_user');
         },
-        tooltip: 'Nuevo usuario',
+        tooltip: 'Nueva banda',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }

@@ -25,7 +25,7 @@ class NewUserPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('agregar usuario nuevo'),
+        title: const Text('agregar banda nueva'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -67,8 +67,6 @@ class NewUserPage extends StatelessWidget {
               const SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: () async {
-                  // Add user to Firebase
-                  //obtener los valores de los textfields
                   final data = {
                     'Nombre de la banda': nombreController.text,
                     'Nombre del album': albumController.text,
