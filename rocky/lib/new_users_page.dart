@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+
 
 class NewUserPage extends StatelessWidget {
   NewUserPage({super.key});
@@ -8,12 +10,13 @@ class NewUserPage extends StatelessWidget {
   final albumController = TextEditingController();
   final anioController = TextEditingController();
   final votoController = TextEditingController();
+  final almacenamiento = FirebaseStorage.instance;
   final instance = FirebaseFirestore.instance;
+
 
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as String?;
-
     if (args != null) {
       instance.collection('bandas').doc(args).get().then((value) {
         nombreController.text = value['Nombre de la banda'];
@@ -37,7 +40,7 @@ class NewUserPage extends StatelessWidget {
                 controller: nombreController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Nombre',
+                  labelText: 'Nombre de la banda',
                 ),
               ),
               const SizedBox(height: 16.0),
@@ -45,7 +48,7 @@ class NewUserPage extends StatelessWidget {
                 controller: albumController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Correo',
+                  labelText: 'Album de la banda',
                 ),
               ),
               const SizedBox(height: 16.0),
@@ -53,7 +56,7 @@ class NewUserPage extends StatelessWidget {
                 controller: anioController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Teléfono',
+                  labelText: 'Año de lanzamiento',
                 ),
               ),
               const SizedBox(height: 16.0),
@@ -80,10 +83,16 @@ class NewUserPage extends StatelessWidget {
                 child: const Text('Agregar'),
                 
               ),
+              const SizedBox(height: 16.0),
             ],
           ),
         ),
       ),
     );
   }
+
+      
+
+
+
 }

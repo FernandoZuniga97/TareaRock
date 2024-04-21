@@ -17,18 +17,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Bandas de rock',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-    home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      // initialRoute: '/login',
+    home: const MyHomePage(title: 'Rock GG'),
       routes: {
         '/new_user': (context) => NewUserPage(),
         '/home': (context) => const MyHomePage(
-              title: 'Usuarios desde firebase',
+              title: 'Rock desde firebase',
             ),
       },
     );

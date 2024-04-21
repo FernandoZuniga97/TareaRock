@@ -27,12 +27,12 @@ class _MyHomePageState extends State<MyHomePage> {
         stream: users,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            final listaUsuarios = snapshot.data!.docs; // La lista de documentos
+            final listaBandas = snapshot.data!.docs;
 
             return ListView.builder(
-              itemCount: listaUsuarios.length,
+              itemCount: listaBandas.length,
               itemBuilder: (context, index) {
-                final user = listaUsuarios[index];
+                final user = listaBandas[index];
 
                 // user.id;
 
@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           Navigator.pushNamed(context, '/new_user');
         },
-        tooltip: 'Nueva banda',
+        tooltip: 'Agregar nueva banda',
         child: const Icon(Icons.add),
       ),
     );
